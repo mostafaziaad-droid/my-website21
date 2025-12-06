@@ -1,0 +1,257 @@
+fire warnd /* Custom styles for Easy2wear */
+
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-image: url("background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.tagline {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+/* Header */
+header {
+    border-bottom: 1px solid #dee2e6;
+}
+
+.navbar-nav .nav-link {
+    color: #495057;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #007bff;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #007bff, #6c757d);
+    color: white;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+/* Products */
+.products h3 {
+    margin-bottom: 2rem;
+    color: #495057;
+}
+
+.product-card {
+    border: 1px solid #dee2e6;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: white;
+    transition: box-shadow 0.3s;
+}
+
+.product-card:hover {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+.product-card h5 {
+    margin-top: 1rem;
+    color: #495057;
+}
+
+.product-card p {
+    color: #6c757d;
+}
+
+.btn-add-cart {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+.btn-add-cart:hover {
+    background-color: #0056b3;
+}
+
+/* Filters */
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+/* Cart Modal */
+#cart-items .cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid #dee2e6;
+}
+
+#cart-items .cart-item img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-right: 1rem;
+}
+
+#cart-total {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #007bff;
+}
+
+/* Checkout */
+.checkout-step {
+    display: none;
+}
+
+.checkout-step.active {
+    display: block;
+}
+
+/* Footer */
+footer {
+    margin-top: 3rem;
+}
+
+footer h5, footer h6 {
+    color: #fff;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+footer .input-group .form-control {
+    border-radius: 0.25rem 0 0 0.25rem;
+}
+
+footer .btn {
+    border-radius: 0 0.25rem 0.25rem 0;
+}
+
+/* Chatbot */
+.chatbot {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    height: 400px;
+    background: white;
+    border: 1px solid #dee2e6;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+.chatbot-header {
+    background: #007bff;
+    color: white;
+    padding: 1rem;
+    border-radius: 0.5rem 0.5rem 0 0;
+    font-weight: bold;
+}
+
+.chatbot-body {
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto;
+}
+
+.chatbot-input {
+    display: flex;
+    padding: 1rem;
+    border-top: 1px solid #dee2e6;
+}
+
+.chatbot-input input {
+    flex: 1;
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem 0 0 0.25rem;
+    padding: 0.5rem;
+}
+
+.chatbot-input button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0 0.25rem 0.25rem 0;
+    cursor: pointer;
+}
+
+.chatbot-input button:hover {
+    background: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero .row {
+        text-align: center;
+    }
+
+    .hero .col-md-6 {
+        margin-bottom: 2rem;
+    }
+
+    .filters {
+        flex-direction: column;
+    }
+
+    .chatbot {
+        width: 90%;
+        right: 5%;
+    }
+}
+
+/* Accessibility */
+.product-card img {
+    alt: "Product Image"; /* Ensure alt text is provided in HTML */
+}
+
+button, a {
+    outline: none;
+}
+
+button:focus, a:focus {
+    outline: 2px solid #007bff;
+}
+body {
+  background-image: url("background.jpg");
+  background-size: cover;        /* الصورة تملأ الشاشة */
+  background-position: center;   /* الصورة تكون في المنتصف */
+  background-repeat: no-repeat;  /* متتكررش */
+  height: 100vh;                 /* ارتفاع الصفحة بالكامل */
+  margin: 0;
+}

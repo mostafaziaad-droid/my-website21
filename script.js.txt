@@ -1,0 +1,165 @@
+// script.js for Easy2wear
+
+// Sample product data
+const seniorProducts = [
+    { id: 1, name: 'Breathable Senior Polo Shirt', price: 29.99, image: 'https://via.placeholder.com/300x200?text=Polo+Shirt', description: 'Comfortable and easy to wear.' },
+    { id: 2, name: 'Elastic Waist Pants', price: 39.99, image: 'https://via.placeholder.com/300x200?text=Pants', description: 'Flexible fit for mobility.' },
+    // Add more products as needed
+];
+
+const graduationProducts = [
+    { id: 3, name: 'Graduation Gown', price: 49.99, image: 'https://via.placeholder.com/300x200?text=Gown', description: 'Elegant cap and gown set.' },
+    { id: 4, name: 'Graduation Suit', price: 79.99, image: 'https://via.placeholder.com/300x200?text=Suit', description: 'Formal attire for the big day.' },
+    // Add more products as needed
+];
+
+// Cart functionality
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+function updateCartCount() {
+    document.getElementById('cart-count').textContent = cart.length;
+}
+
+function addToCart(productId, category) {
+    const products = category === 'senior' ? seniorProducts : graduationProducts;
+    const product = products.find(p => p.id === productId);
+    if (product) {
+        cart.push({ ...product, quantity: 1 });
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCartCount();
+        alert('Added to cart!');
+    }
+}
+
+function renderCart() {
+    const cartItems = document.getElementById('cart-items');
+    cartItems.innerHTML = '';
+    let total = 0;
+    cart.forEach((item, index) => {
+        total += item.price * item.quantity;
+        cartItems.innerHTML += `
+            <div class="cart-item">
+                <img src="${item.image}" alt="${item.name}">
+                <div>
+                    <h6>${item.name}</h6>
+                    <p>$${item.price} x ${item.quantity}</p>
+                </div>
+                <button class="btn btn-sm btn-danger" onclick="removeFromCart(${index})">Remove</button>
+            </div>
+        `;
+    });
+    cartItems.innerHTML += `<div id="cart-total">Total: $${total.toFixed(2)}</div>`;
+}
+
+function removeFromCart(index) {
+    cart.splice(index, 1);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartCount();
+    renderCart();
+}
+
+// Render products
+function renderProducts(products, containerId, category) {
+    const container = document.getElementById(containerId);
+    container.innerHTML = '';
+    products.forEach(product => {
+        container.innerHTML += `
+            <div class="col-md-4 product-card">
+                <img src="${product.image}" alt="${product.name}">
+                <h5>${product.name}</h5>
+                <p>$${product.price}</p>
+                <p>${product.description}</p>
+                <button class="btn-add-cart" onclick="addToCart(${product.id}, '${category}')">Add to Cart</button>
+            </div>
+        `;
+    });
+}
+
+// Checkout functionality
+let currentStep = 1;
+
+function showCheckoutStep(step) {
+    document.querySelectorAll('.checkout-step').forEach(s => s.style.display = 'none');
+    document.getElementById(`checkout-step-${step}`).style.display = 'block';
+    currentStep = step;
+}
+
+document.getElementById('next-step-1').addEventListener('click', () => {
+    if (document.getElementById('shipping-form').checkValidity()) {
+        showCheckoutStep(2);
+    } else {
+        alert('Please fill in all shipping details.');
+    }
+});
+
+document.getElementById('next-step-2').addEventListener('click', () => {
+    showCheckoutStep(3);
+});
+
+document.getElementById('payment-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    // Simulate payment processing
+    alert('Payment processed successfully! Order confirmed.');
+    cart = [];
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartCount();
+    bootstrap.Modal.getInstance(document.getElementById('checkoutModal')).hide();
+    bootstrap.Modal.getInstance(document.getElementById('cartModal')).hide();
+});
+
+// Chatbot functionality
+const chatbotResponses = {
+    'hello': 'Hello! How can I help you today?',
+    'sizes': 'We offer sizes S, M, L, and XL. Please check product details for availability.',
+    'delivery': 'Standard delivery takes 5-7 business days. Express is 2-3 days.',
+    'returns': 'We accept returns within 30 days. Please see our returns policy.',
+    'recommend': 'For seniors, I recommend our breathable polo shirts. For graduation, check out our elegant gowns.',
+    'default': 'I\'m sorry, I didn\'t understand that. Can you please rephrase?'
+};
+
+function sendMessage() {
+    const input = document.getElementById('chat-input');
+    const message = input.value.toLowerCase();
+    const body = document.getElementById('chatbot-body');
+    body.innerHTML += `<p><strong>You:</strong> ${input.value}</p>`;
+    input.value = '';
+
+    let response = chatbotResponses.default;
+    if (message.includes('hello') || message.includes('hi')) response = chatbotResponses.hello;
+    else if (message.includes('size')) response = chatbotResponses.sizes;
+    else if (message.includes('delivery') || message.includes('shipping')) response = chatbotResponses.delivery;
+    else if (message.includes('return')) response = chatbotResponses.returns;
+    else if (message.includes('recommend')) response = chatbotResponses.recommend;
+
+    setTimeout(() => {
+        body.innerHTML += `<p><strong>Bot:</strong> ${response}</p>`;
+        body.scrollTop = body.scrollHeight;
+    }, 500);
+}
+
+document.getElementById('send-btn').addEventListener('click', sendMessage);
+document.getElementById('chat-input').addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') sendMessage();
+});
+
+// Event listeners
+document.getElementById('cart-link').addEventListener('click', (e) => {
+    e.preventDefault();
+    renderCart();
+    new bootstrap.Modal(document.getElementById('cartModal')).show();
+});
+
+document.getElementById('checkout-btn').addEventListener('click', () => {
+    new bootstrap.Modal(document.getElementById('checkoutModal')).show();
+    showCheckoutStep(1);
+});
+
+// Initialize
+document.addEventListener('DOMContentLoaded', () => {
+    renderProducts(seniorProducts, 'senior-products', 'senior');
+    renderProducts(graduationProducts, 'graduation-products', 'graduation');
+    updateCartCount();
+});
+function Start_TubeX_Final_Test() {
+    console.log("Test Started");
+}

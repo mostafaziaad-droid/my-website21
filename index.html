@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easy2wear - Senior and Graduation Clothes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <header class="bg-light py-3">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-3">
+                    <h1 class="logo">Easy2wear</h1>
+                    <p class="tagline">Comfortable Clothing for Every Occasion</p>
+                </div>
+                <div class="col-md-6">
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search products..." aria-label="Search">
+                        <button class="btn btn-outline-primary" type="submit">Search</button>
+                    </form>
+                </div>
+                <div class="col-md-3 text-end">
+                    <a href="#" class="text-decoration-none me-3">Login</a>
+                    <a href="#" class="text-decoration-none me-3">Register</a>
+                    <a href="#" id="cart-link" class="text-decoration-none">
+                        Cart (<span id="cart-count">0</span>)
+                    </a>
+                </div>
+            </div>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light mt-3">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav me-auto">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#home">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#senior">Senior Clothes</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#graduation">Graduation Clothes</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#about">About Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#contact">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero bg-primary text-white py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h2>Welcome to Easy2wear</h2>
+                    <p>Discover comfortable and stylish clothing for seniors and graduation ceremonies. Quality fabrics, easy fit, and great prices.</p>
+                    <a href="#senior" class="btn btn-light me-2">Shop Senior Clothes</a>
+                    <a href="#graduation" class="btn btn-outline-light">Shop Graduation Clothes</a>
+                </div>
+                <div class="col-md-6">
+                   
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="senior" class="products py-5">
+        <div class="container">
+            <h3>Senior Clothes</h3>
+            <div class="filters mb-4">
+                <select class="form-select d-inline-block w-auto me-2">
+                    <option>Price: All</option>
+                    <option>$0 - $25</option>
+                    <option>$25 - $50</option>
+                    <option>$50+</option>
+                </select>
+                <select class="form-select d-inline-block w-auto me-2">
+                    <option>Size: All</option>
+                    <option>S</option>
+                    <option>M</option>
+                    <option>L</option>
+                    <option>XL</option>
+                </select>
+                <select class="form-select d-inline-block w-auto me-2">
+                    <option>Color: All</option>
+                    <option>Blue</option>
+                    <option>Gray</option>
+                    <option>White</option>
+                    <option>Black</option>
+                </select>
+                <select class="form-select d-inline-block w-auto">
+                    <option>Style: All</option>
+                    <option>Polo</option>
+                    <option>Pants</option>
+                    <option>Shirt</option>
+                </select>
+            </div>
+            <div class="row" id="senior-products">
+                <!-- Products will be rendered here by JavaScript -->
+            </div>
+            <nav aria-label="Senior products pagination">
+                <ul class="pagination justify-content-center mt-4">
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1">Previous</a>
+                    </li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+    <section id="graduation" class="products py-5 bg-light">
+        <div class="container">
+            <h3>Graduation Clothes</h3>
+            <div class="filters mb-4">
+                <select class="form-select d-inline-block w-auto me-2">
+                    <option>Price: All</option>
+                    <option>$0 - $50</option>
+                    <option>$50 - $100</option>
+                    <option>$100+</option>
+                </select>
+                <select class="form-select d-inline-block w-auto me-2">
+                    <option>Size: All</option>
+                    <option>S</option>
+                    <option>M</option>
+                    <option>L</option>
+                    <option>XL</option>
+                </select>
+                <select class="form-select d-inline-block w-auto me-2">
+                    <option>Color: All</option>
+                    <option>Black</option>
+                    <option>Navy</option>
+                    <option>White</option>
+                </select>
+                <select class="form-select d-inline-block w-auto">
+                    <option>Style: All</option>
+                    <option>Gown</option>
+                    <option>Suit</option>
+                    <option>Hat</option>
+                </select>
+            </div>
+            <div class="row" id="graduation-products">
+                <!-- Products will be rendered here by JavaScript -->
+            </div>
+            <nav aria-label="Graduation products pagination">
+                <ul class="pagination justify-content-center mt-4">
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1">Previous</a>
+                    </li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Cart Modal -->
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cartModalLabel">Shopping Cart</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="cart-items">
+                        <!-- Cart items will be rendered here -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Continue Shopping</button>
+                    <button type="button" class="btn btn-primary" id="checkout-btn">Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="modal fade" id="checkoutModal" tabindex="-1" aria-labelledby="checkoutModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="checkoutModalLabel">Checkout</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="checkout-step-1" class="checkout-step active">
+                        <h6>Shipping Information</h6>
+                        <form id="shipping-form">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="firstName" class="form-label">First Name</label>
+                                    <input type="text" class="form-control" id="firstName" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="lastName" class="form-label">Last Name</label>
+                                    <input type="text" class="form-control" id="lastName" required>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            <button type="button" class="btn btn-primary" id="next-step-1">Next</button>
+                        </form>
+                    </div>
+                    <div id="checkout-step-2" class="checkout-step">
+                        <h6>Shipping Method</h6>
+                        <div class="mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="shippingMethod" id="standardShipping" checked>
+                                <label class="form-check-label" for="standardShipping">
+                                    Standard Shipping (5-6 days) - Free
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="shippingMethod" id="expressShipping">
+                                <label class="form-check-label" for="expressShipping">
+                                    Express Shipping (2-3 days) - 30E.G.P
+                                </label>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-secondary" onclick="showCheckoutStep(1)">Back</button>
+                        <button type="button" class="btn btn-primary" id="next-step-2">Next</button>
+                    </div>
+                    <div id="checkout-step-3" class="checkout-step">
+                        <h6>Payment Information</h6>
+                        <form id="payment-form">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="cardNumber" class="form-label">Card Number</label>
+                                    <input type="text" class="form-control" id="cardNumber" placeholder="1234 5678 9012 3456" required>
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <label for="expiryDate" class="form-label">Expiry Date</label>
+                                    <input type="text" class="form-control" id="expiryDate" placeholder="MM/YY" required>
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <label for="cvv" class="form-label">CVV</label>
+                                    <input type="text" class="form-control" id="cvv" placeholder="123" required>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-secondary" onclick="showCheckoutStep(2)">Back</button>
+                            <button type="submit" class="btn btn-success">Complete Purchase</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h5>Easy2wear</h5>
+                    <p>Comfortable clothing for every occasion.</p>
+                </div>
+                <div class="col-md-3">
+                    <h6>Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#home" class="text-white">Home</a></li>
+                        <li><a href="#senior" class="text-white">Senior Clothes</a></li>
+                        <li><a href="#graduation" class="text-white">Graduation Clothes</a></li>
+                        <li><a href="#about" class="text-white">About Us</a></li>
+                        <li><a href="#contact" class="text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h6>Customer Service</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Shipping Info</a></li>
+                        <li><a href="#" class="text-white">Returns</a></li>
+                        <li><a href="#" class="text-white">Size Guide</a></li>
+                        <li><a href="#" class="text-white">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h6>Newsletter</h6>
+                    <p>Subscribe to get updates on new products and offers.</p>
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control" placeholder="Your email" aria-label="Your email">
+                        <button class="btn btn-primary" type="button">Subscribe</button>
+                    </div>
+                    <div class="social-media">
+                        <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2025 Easy2wear. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-end">
+                    <p>Contact: info@easy2wear.com | Phone: (01016531916)</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chatbot Toggle Button -->
+    <button class="chatbot-toggle" onclick="toggleChatbot()">Chat with zizi</button>
+
+    <!-- Chatbot -->
+    <div class="chatbot" id="chatbot">
+        <div class="chatbot-header">
+            <span>zizi</span>
+            <button class="btn-close btn-close-white" onclick="toggleChatbot()"></button>
+        </div>
+        <div class="chatbot-body" id="chatbot-body">
+            <p><strong>zizi:</strong> Hello! How can I help you today?</p>
+        </div>
+        <div class="chatbot-input">
+            <input type="text" id="chat-input" placeholder="Type your message...">
+            <button id="send-btn">Send</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+script src="https://cdn.jsdelivr.net/npm/fireworks-js@2.10.5/dist/index.umd.js"></script>
+<script>
+  const container = document.body;
+  const fireworks = new Fireworks(container, {
+    opacity: 0.5,
+    acceleration: 1.05,
+    friction: 0.97,
+    gravity: 1.5,
+    particles: 120,
+    trace: 3,
+    explosion: 5,
+  });
+  fireworks.start();
+fireworks.stop();
+
+</script>
+<section id="about-us">
+    <h2>About Us</h2>
+    <p>Welcome to our store. We provide the best products WE USE GOOD FABRIC , with fast delivery and excellent support.</p>
+</section>
+
+<section id="contact">
+    <h2>We Contact</h2>
+    <p>Email: EASY2WEAR@gmail.com</p>
+    <p>Phone: +201016531916</p>
+    <p>Address:  Egypt</p>
+</section>
+</body>
+</html>
